@@ -1,55 +1,55 @@
-# Servicio de Inversiones — BICE Inversiones Demo
-# Gestiona fondos mutuos, APV, acciones y depósitos
+# Servicio de Seguros — BICE Seguros Demo
+# Gestiona seguros personales y asociados a productos
 
-class InvestmentService:
+class InsuranceService:
     """
-    Gestiona todos los productos de inversión BICE.
-    Incluye fondos mutuos, APV, acciones, renta fija y DAP.
+    Gestiona todos los productos de seguros BICE para persona natural.
+    Incluye seguros automotriz, vida, hogar, SOAP, viaje y desgravamen.
     """
 
-    def get_portfolio(self, client_id: str):
+    def get_active_policies(self, client_id: str):
         """
-        Retorna el portafolio completo de inversiones del cliente.
-        Incluye: productos activos, montos, rentabilidad YTD, evolución 12 meses.
-        """
-        pass
-
-    def get_mutual_funds(self, client_id: str):
-        """
-        Retorna fondos mutuos activos del cliente.
-        Incluye: fondo, monto invertido, rentabilidad, perfil de riesgo.
-        Fondos disponibles: conservador, moderado, agresivo, money market.
+        Retorna todas las pólizas activas del cliente.
+        Incluye: tipo, cobertura, prima mensual, fecha vencimiento, estado.
         """
         pass
 
-    def subscribe_apv(self, client_id: str, amount: float, regime: str):
+    def quote_auto_insurance(self, client_id: str, vehicle_data: dict):
         """
-        Suscribe al cliente a APV (Ahorro Previsional Voluntario).
-        Regime: 'A' (rebaja impuestos) o 'B' (beneficio al rescatar).
-        Calcula beneficio tributario estimado según ingresos del cliente.
-        """
-        pass
-
-    def buy_stocks(self, client_id: str, ticker: str, amount: float):
-        """
-        Ejecuta compra de acciones en bolsa local.
-        Ticker: símbolo bursátil (ej: FALABELLA, BICE, COPEC).
-        Requiere perfil de inversión aprobado.
+        Genera cotización de seguro automotriz.
+        Incluye: cobertura básica, todo riesgo, asistencia 24/7, auto de reemplazo.
+        Precio varía según: año vehículo, marca, uso, historial del conductor.
         """
         pass
 
-    def create_time_deposit(self, client_id: str, amount: float, days: int):
+    def get_claims_history(self, client_id: str):
         """
-        Crea un depósito a plazo fijo.
-        Días disponibles: 30, 60, 90, 180, 360.
-        Retorna tasa ofrecida y monto estimado al vencimiento.
+        Retorna historial de siniestros del cliente.
+        Incluye: fecha, tipo, estado, monto liquidado, tiempo de resolución.
+        Usado para calcular prima de renovación.
         """
         pass
 
-    def get_investment_recommendations(self, client_id: str):
+    def renew_soap(self, client_id: str, vehicle_id: str):
         """
-        Genera recomendaciones de inversión personalizadas.
-        Basado en: perfil de riesgo, edad, ingresos, productos actuales.
-        Identifica productos no contratados con mayor potencial para el cliente.
+        Renueva el SOAP (Seguro Obligatorio Accidentes Personales).
+        Proceso 100% digital, sin papeles.
+        Envía certificado por email al completar el pago.
+        """
+        pass
+
+    def subscribe_life_insurance(self, client_id: str, coverage: float):
+        """
+        Suscribe al cliente a seguro de vida BICE.
+        Coverage: monto asegurado en pesos.
+        Prima calculada según: edad, cobertura, historial médico declarado.
+        """
+        pass
+
+    def get_insurance_recommendations(self, client_id: str):
+        """
+        Identifica seguros no contratados relevantes para el cliente.
+        Lógica: cliente con hipotecario sin seguro hogar = recomendación prioritaria.
+        Cliente con vehículo registrado sin SOAP = alerta regulatoria.
         """
         pass
